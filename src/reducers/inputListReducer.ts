@@ -1,7 +1,6 @@
 import { getNextId } from '../utils/helpers';
 
 const initialState: any = {
-  counter: 0,
   list: []
 };
 
@@ -26,8 +25,7 @@ export default function(
       };
     case 'REMOVE_ALL_INPUT':
       return {
-        list: [],
-        counter: 0
+        list: []
       };
     default:
       return state;
