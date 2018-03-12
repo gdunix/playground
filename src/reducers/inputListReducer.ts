@@ -1,3 +1,5 @@
+import { getNextId } from '../utils/helpers';
+
 const initialState: any = {
   counter: 0,
   list: []
@@ -9,21 +11,18 @@ export default function(
 ) {
   switch (action.type) {
     case 'APPEND_INPUT':
-      const counter = state.counter + 1;
       return {
         list: [
           ...state.list,
-          {id: counter}
-        ],
-        counter
+          {id: getNextId()}
+        ]
       };
     case 'REMOVE_INPUT':
       return {
         ...state,
         list: state.list.filter(
           (i: any) => i.id !== action.payload.value
-        ),
-        counter: state.counter - 1
+        )
       };
     case 'REMOVE_ALL_INPUT':
       return {
