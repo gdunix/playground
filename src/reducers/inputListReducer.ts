@@ -22,7 +22,8 @@ export default function(
         ...state,
         list: state.list.filter(
           (i: any) => i.id !== action.payload.value
-        )
+        ),
+        counter: state.counter - 1
       };
     case 'REMOVE_ALL_INPUT':
       return {
