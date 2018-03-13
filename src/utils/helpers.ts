@@ -1,6 +1,3 @@
 let counter = 0;
 
-export const getNextId = () => {
-    counter++;
-    return counter;
-};
+export const getNextId = () => counter++;
